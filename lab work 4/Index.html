@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 id="top">Basic Geometry</h1>
+        <p>In this section, we are going to find the Area of some two-dimension shapes</p>
+        <p>You can click on any shape below</p>
+
+        <!-- create a list-->
+        <ul>
+            <li><a href="Circle" title="click to access cercle">Circle</a></li>
+            <li><a href="Triangle" title="click to access Triangle">Triangle</a></li>
+            <li><a href="Square" title="click to access Square">Square</a></li>
+            <li><a href="Rectangle" title="click to access Rectangle">Rectangle</a></li>
+        </ul>
+<!------------------------------------------------------------------------------------------------------------------------------>>
+
+            <!-- part of css -->
+            <style>
+                .wrapper
+                {
+                    width: 70%;
+                    background-color: bisque;
+                    justify-content: center;
+
+                }     
+
+                section
+                {
+                    width: 65%;
+                    background-color: white;
+                    border-style: groove;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .wrapper, section
+                {
+                    padding-left: 5px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-right: 5px;
+                    box-sizing: content-box;
+                    width: 100%;
+                    border: solid #5B6DCD 10px;
+                    padding: 5px;
+                }
+
+                .go
+                {
+                    text-align: center;
+                }
+            </style>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+        
+
+        <!-- to separate : the first section is for circle-->
+        <section id="circle">
+            <h2>Circle Area</h2>
+            
+            <div>
+                <!-- Enter the value-->
+                <label for="radius">Enter the value of the circle: </label>
+                <input type="text" id="radius">
+            </div>
+            <div>
+                <!-- for the result-->
+                <label for="circle_area">Result:</label>
+                <input type="text" id="circle-area" readonly>
+            </div>
+            <hr>
+
+            <!-- Add a button for calculate-->
+            <button onclick="circleArea()">Calculate</button>
+            <div class="go">
+                <a href="#top">Go to the top</a>
+            </div>
+        </section>
+<!----------------------------------------------------------------------------------------------------------------------------->
+        
+
+        <!-- Section trangle-->
+        <section id="trangle">
+            <h2>Triangle Area</h2>
+            
+            <div>
+                <!-- Enter the value for the base -->
+                <label for="base">Enter the value of the base of triangle: </label>
+                <input type="text" id="base">
+            </div>
+            <br>
+            <div>
+                <!-- Enter the value for the weight-->
+                <label for="weight">Enter the value of the weight of  triangle: </label>
+                <input type="text" id="weight">
+            </div>
+            <div>
+                <!-- for the result-->
+                <label for="triangle_area">Result:</label>
+                <input type="text" id="triangle-area" readonly>
+            </div>
+            <hr>
+
+            <!-- Add a button for calculate-->
+            <button onclick="triangleArea()">Calculate</button>
+            <div class="go">
+                <a href="#top">Go to the top</a>
+            </div>
+        </section>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+        <!--Section square-->
+        <section id="square">
+            <h2>Square Area</h2>
+            
+            <div>
+                <!-- Enter the value of the side -->
+                <label for="side">Enter the value of the side of square: </label>
+                <input type="text" id="side">
+            </div>
+            <div>
+                <!-- for the result-->
+                <label for="square_area">Result:</label>
+                <input type="text" id="square-area" readonly>
+            </div>
+            <hr>
+
+            <!-- Add a button for calculate-->
+            <button onclick="squareArea()">Calculate</button>
+            <div class="go">
+                <a href="#top">Go to the top</a>
+            </div>
+        </section>
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+
+        <!--Section rectangle-->
+        <section id="rectangle">
+            <h2>rectangle Area</h2>
+            
+            <div>
+                <!-- Enter the value of the lenght-->
+                <label for="lenght">Enter the value of the rectangle: </label>
+                <input type="text" id="lenght">
+            </div>
+            <br>
+            <div>
+                <!-- Enter the value of the width-->
+                <label for="width">Enter the value of the width rectangle: </label>
+                <input type="text" id="width">
+            </div>
+            <div>
+                <!-- for the result-->
+                <label for="rectangle-area">Result:</label>
+                <input type="text" id="rectangle-area" readonly>
+            </div>
+            <hr>
+
+            <!-- Add a button for calculate-->
+            <button onclick="rectangleArea()">Calculate</button>
+            <div class="go">
+                <a href="#top">Go to the top</a>
+            </div>
+        </section>
+        
+<!----------------------------------------------------------------------------------------------------------------------------->
+
+    </div>
+
+    <script>
+        // is for all function
+
+        // write function circle with radius. 
+        // value = enter of people
+        // variable x is a string
+        // y is a number 
+        // result = resultat of Area
+
+
+       function circleArea()
+       {
+        let value = document.getElementById("radius").value;
+        let x = value.trim();
+        let y = Number(x);
+        let Area = Math.PI * (y*y);
+        let result = document.getElementById("circle-area");
+        result.value = Area;
+       }
+
+       function triangleArea()
+       {
+        let value = document.getElementById("base").value;
+        let x = value.trim();
+        let y = Number(x);
+        let value2 = document.getElementById("weight").value;
+        let x2 = value.trim();
+        let y2 = Number(x2);
+
+        let Area = (y * y2) / 2;
+        let result = document.getElementById("triangle-area");
+        result.value = Area;
+       }
+
+
+       function squareArea()
+       {
+        let value = document.getElementById("side").value;
+        let x = value.trim();
+        let y = Number(x);
+        let Area = y * y ;
+        let result = document.getElementById("square-area");
+        result.value = Area;
+       }
+
+
+       function rectangleArea()
+       {
+        let value = document.getElementById("lenght").value;
+        let x = value.trim();
+        let y = Number(x);
+        let value2 = document.getElementById("width").value;
+        let x2 = value2.trim();
+        let y2 = Number(x2);
+
+        let Area = (y2 * y);
+        let result = document.getElementById("rectangle-area");
+        result.value = Area;
+       }
+
+
+    </script>
+</body>
+</html>
